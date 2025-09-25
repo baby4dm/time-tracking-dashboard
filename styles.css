@@ -11,7 +11,7 @@ body {
   align-items: center;
   font-family: "Rubik", sans-serif;
   color: #ffffff;
-  height: 100vh;
+  min-height: 100vh;
 }
 .card-container {
   width: 327px;
@@ -25,13 +25,12 @@ body {
   clip-path: inset(0 round 15px);
   border-radius: 15px;
   padding-top: 38px;
-  z-index: -1;
+  height: 160px;
 }
 .card .icon {
   position: absolute;
   top: -10px;
   right: 20px;
-  z-index: 0;
 }
 .date-ranges {
   background-color: #1c204b;
@@ -45,10 +44,13 @@ body {
   color: #7078c9;
   position: relative;
   padding-top: 45px;
-  z-index: -1;
   margin-top: -20px;
   line-height: 21px;
   width: 100%;
+}
+.date-range {
+  cursor: pointer;
+  position: relative;
 }
 .card-main .card-header {
   display: flex;
@@ -58,6 +60,7 @@ body {
   border-radius: 15px;
   align-items: center;
   height: 133px;
+  z-index: 1;
 }
 .avatar {
   width: 64px;
@@ -107,7 +110,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  z-index: 1;
   background-color: #1c204b;
   border-radius: 15px 15px 0 0;
   height: 100%;
@@ -138,19 +140,27 @@ body {
   font-weight: 400;
   color: #bbc0ff;
 }
+.active {
+  color: #ffffff;
+}
 @media (min-width: 768px) {
   .card-container {
-    margin: 0 auto;
+    margin: 32px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 24px;
     width: 612px;
+    height: 677px;
   }
-
+  .card {
+    height: 213px;
+    width: 188px;
+  }
   .card-main {
     grid-row: 1;
     grid-column: 1 / span 3;
+    height: 203px;
   }
   .date-ranges {
     padding-inline: 150px;
@@ -168,6 +178,7 @@ body {
 
 @media (min-width: 1440px) {
   .card-container {
+    margin: 32px auto;
     display: grid;
     grid-template-columns: repeat(4, 255px);
     grid-template-rows: repeat(2, 244px);
@@ -184,16 +195,24 @@ body {
     height: 100%;
     width: 100%;
   }
+  .card {
+    height: 244px;
+    width: 255px;
+  }
   .card-main .card-header {
     height: 354px;
     display: flex;
     flex-direction: column;
     align-items: start;
+    gap: 0;
   }
   .avatar {
     width: 78px;
     height: 78px;
     margin-bottom: 40px;
+  }
+  .report {
+    margin: 0;
   }
   .name {
     font-size: 40px;
@@ -218,5 +237,11 @@ body {
   .current-hours {
     padding-top: 24px;
     padding-bottom: 8px;
+  }
+  .card .card-body:hover {
+    background-color: #33397a;
+  }
+  .date-range:hover {
+    color: #ffffff;
   }
 }
