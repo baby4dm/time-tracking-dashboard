@@ -10,9 +10,9 @@ fetch("./data.json")
 
       card.querySelector(".title").textContent = item.title;
       card.querySelector(".current-hours").textContent =
-        item.timeframes[timeFrame].current + " hrs";
+        item.timeframes[timeFrame].current + "hrs";
       card.querySelector(".previous-hours").textContent = 
-        "Last week - " + item.timeframes[timeFrame].previous + " hours";
+        "Last week - " + item.timeframes[timeFrame].previous + "hrs";
     });
   })
   .catch((err) => console.error("Error loading JSON: ", err));
